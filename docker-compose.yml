@@ -1,0 +1,74 @@
+# Docker Compose for Local Development
+# =====================================
+# 
+# This compose file sets up the complete development environment with:
+# - PostgreSQL 15 (compatible with Neon free-tier)
+# - Redis 7 (compatible with Upstash free-tier)
+# - API service (Node.js + Express)
+# - Web service (Vite + React)
+#
+# Usage:
+#   docker compose up              # Start all services
+#   docker compose up -d           # Start in background
+#   docker compose down            # Stop all services
+#   docker compose down -v         # Stop and remove volumes
+#   docker compose logs -f api     # View API logs
+#   docker compose logs -f web     # View Web logs
+#   docker compose ps              # Check status
+#
+# Production Notes:
+# - This is for LOCAL development only
+# - For production, we use Render.com with:
+#   - Neon PostgreSQL (serverless)
+#   - Upstash Redis (serverless)
+#   - Single Render Web Service hosting both API + static frontend
+
+services:
+  # PostgreSQL Database (Neon-compatible for local dev)
+  postgres:
+    image: postgres:15-alpine
+    container_name: ims-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ims
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ims"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ims-network
+
+  # Redis (Upstash-compatible for local dev)
+  redis:
+    image: redis:7-alpine
+    container_name: ims-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    ports:
+      - "6479:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ims-network
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  ims-network:
+    driver: bridge

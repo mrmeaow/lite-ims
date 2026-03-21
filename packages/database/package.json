@@ -1,0 +1,28 @@
+{
+  "name": "@ims/database",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "../../dist/packages/database/index.js",
+  "types": "../../dist/packages/database/index.d.ts",
+  "exports": {
+    ".": "../../dist/packages/database/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "generate": "prisma generate",
+    "push": "prisma db push",
+    "migrate": "prisma migrate dev",
+    "migrate:deploy": "prisma migrate deploy",
+    "studio": "prisma studio",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.4.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "prisma": "^6.4.1",
+    "typescript": "^5.7.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@ims/types",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "../../dist/packages/types/index.js",
+  "types": "../../dist/packages/types/index.d.ts",
+  "exports": {
+    ".": "../../dist/packages/types/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

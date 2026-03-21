@@ -1,0 +1,25 @@
+{
+  "name": "pern-ims",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Inventory Management System using PERN Stack",
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --parallel -r dev",
+    "build": "pnpm --filter @ims/shared build && pnpm --filter @ims/types build && pnpm --filter @ims/database build && pnpm --filter @ims/web build && pnpm --filter @ims/api build",
+    "preview": "pnpm --filter @ims/api preview",
+    "typecheck": "pnpm -r typecheck",
+    "api": "pnpm --filter @ims/api",
+    "web": "pnpm --filter @ims/web",
+    "db:generate": "pnpm --filter @ims/database generate",
+    "db:push": "pnpm --filter @ims/database push",
+    "db:migrate": "pnpm --filter @ims/database migrate"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=22.18.0",
+    "pnpm": ">=9.0.0"
+  }
+}

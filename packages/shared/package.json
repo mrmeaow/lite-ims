@@ -1,0 +1,27 @@
+{
+  "name": "@ims/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "../../dist/packages/shared/index.js",
+  "types": "../../dist/packages/shared/index.d.ts",
+  "exports": {
+    ".": "../../dist/packages/shared/index.js",
+    "./schemas.js": "../../dist/packages/shared/schemas.js",
+    "./constants.js": "../../dist/packages/shared/constants.js",
+    "./utils.js": "../../dist/packages/shared/utils.js",
+    "./schemas": "../../dist/packages/shared/schemas.js",
+    "./constants": "../../dist/packages/shared/constants.js",
+    "./utils": "../../dist/packages/shared/utils.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

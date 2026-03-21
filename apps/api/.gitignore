@@ -1,0 +1,6 @@
+# Ignore local env files
+.env.local
+.env.*.local
+
+# Ignore production env (should use Render dashboard)
+.env.production

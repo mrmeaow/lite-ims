@@ -5,19 +5,19 @@
     "moduleResolution": "bundler",
     "types": ["node"],
     "skipLibCheck": true,
-    "noEmit": false,
     "noImplicitAny": false,
-    "outDir": "../../dist/apps/api",
+    "noEmit": false,
+    "outDir": "./dist",
     "rootDir": "./src",
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@ims/shared": ["../../dist/packages/shared"],
-      "@ims/shared/*": ["../../dist/packages/shared/*"],
-      "@ims/types": ["../../dist/packages/types"],
-      "@ims/types/*": ["../../dist/packages/types/*"],
-      "@ims/database": ["../../dist/packages/database"],
-      "@ims/database/*": ["../../dist/packages/database/*"]
+      "@ims/shared": ["../../packages/shared/dist"],
+      "@ims/shared/*": ["../../packages/shared/dist/*"],
+      "@ims/types": ["../../packages/types/dist"],
+      "@ims/types/*": ["../../packages/types/dist/*"],
+      "@ims/database": ["../../packages/database/dist"],
+      "@ims/database/*": ["../../packages/database/dist/*"]
     }
   },
   "include": ["src/**/*"],

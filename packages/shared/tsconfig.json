@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "../../dist/packages/shared",
+    "outDir": "./dist",
     "rootDir": "./src",
     "lib": ["ES2022", "DOM"]
   },

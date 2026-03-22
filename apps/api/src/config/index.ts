@@ -1,6 +1,7 @@
 import { z } from "zod";
 import path from "path";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -31,14 +32,11 @@ const configSchema = z.object({
 export type Config = z.infer<typeof configSchema>;
 
 function loadConfig(): Config {
-  // Load .env file explicitly from the api directory
-  try {
-    const dotenv = require("dotenv");
-    const envPath = path.resolve(__dirname, "../../.env");
-    dotenv.config({ path: envPath });
-  } catch {
-    // dotenv not available, use process.env directly
-  }
+  // Load .env from project root (works from any working directory)
+  // Uses INIT_CWD if available (set by pnpm/npm), otherwise falls back to process.cwd()
+  const initCwd = process.env["INIT_CWD"] || process.cwd();
+  const rootEnvPath = path.resolve(initCwd, ".env");
+  dotenv.config({ path: rootEnvPath });
 
   const env = {
     nodeEnv: process.env["NODE_ENV"],

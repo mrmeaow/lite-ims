@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "main": "../../dist/packages/shared/index.js",
-  "types": "../../dist/packages/shared/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "../../dist/packages/shared/index.js",
-    "./schemas.js": "../../dist/packages/shared/schemas.js",
-    "./constants.js": "../../dist/packages/shared/constants.js",
-    "./utils.js": "../../dist/packages/shared/utils.js",
-    "./schemas": "../../dist/packages/shared/schemas.js",
-    "./constants": "../../dist/packages/shared/constants.js",
-    "./utils": "../../dist/packages/shared/utils.js"
+    ".": "./dist/index.js",
+    "./schemas.js": "./dist/schemas.js",
+    "./constants.js": "./dist/constants.js",
+    "./utils.js": "./dist/utils.js",
+    "./schemas": "./dist/schemas.js",
+    "./constants": "./dist/constants.js",
+    "./utils": "./dist/utils.js"
   },
   "scripts": {
     "build": "tsc",

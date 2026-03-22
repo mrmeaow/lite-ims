@@ -54,11 +54,11 @@ app.use("/api", routes);
 
 // Serve static files from the built web app (SPA)
 // Path resolution works for both local and Render deployment:
-// - Local: Running from dist/apps/api/index.js, client at dist/apps/web
-// - Render: Running from /opt/render/project/dist/apps/api/index.js
+// - Local: Running from apps/api/dist/index.js, client at apps/api/dist/client
+// - Render: Running from /opt/render/project/apps/api/dist/index.js
 const clientPath = process.env["CLIENT_PATH"]
   ? path.resolve(process.env["CLIENT_PATH"])
-  : path.resolve(__dirname, "../web"); // resolves to => <root>/dist/apps/web/
+  : path.resolve(__dirname, "client"); // resolves to => apps/api/dist/client/
 
 app.use(express.static(clientPath));
 

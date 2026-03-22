@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: path.resolve(__dirname, "../../dist/apps/web"),
+    outDir: path.resolve(__dirname, "../api/dist/client"),
     sourcemap: true,
     emptyOutDir: true,
   },

@@ -174,7 +174,8 @@ Email:    admin@ims.local
 Password: admin123
 ```
 
-> ⚠️ **Important**: Change default credentials in production!
+> [!IMPORTANT]
+> Change default credentials in production!
 
 ---
 
@@ -482,7 +483,7 @@ pnpm typecheck
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) for details.
+MIT License - see [LICENSE](./LICENSE) for details.
 
 ---
 
@@ -501,7 +502,8 @@ Contributions are welcome! Please follow these steps:
 ## 👨‍💻 Author
 
 **mrmeaow**  
-Full-Stack Developer | TypeScript Enthusiast
+
+Full-Stack (SWE) Developer | TypeScript Enthusiast
 
 - 🌐 **GitHub**: [@mrmeaow](https://github.com/mrmeaow)
 - 💼 **Portfolio**: [My Digital Space](https://mrmeaow.netlify.app)
@@ -519,7 +521,7 @@ Full-Stack Developer | TypeScript Enthusiast
 For issues, questions, or contributions:
 - 🐛 **Bug Reports**: Open an issue on GitHub
 - 💬 **Questions**: Use GitHub Discussions
-- 📩 **Contact**: [your-email@example.com]
+- 📩 **Contact**: [iam.mahabub@proton.me](mailto:iam.mahabub@proton.me)
 
 ---
 

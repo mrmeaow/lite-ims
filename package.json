@@ -9,7 +9,7 @@
     "dev:api": "dotenv -e .env -- pnpm --filter @ims/api dev",
     "dev:web": "dotenv -e .env -- pnpm --filter @ims/web dev",
     "dev:all": "dotenv -e .env -- pnpm --parallel dev:api dev:web",
-    "build": "pnpm --filter @ims/shared build && pnpm --filter @ims/types build && pnpm --filter @ims/database build && pnpm --filter @ims/web build && pnpm --filter @ims/api build",
+    "build": "pnpm --filter @ims/database build && pnpm --filter @ims/shared build && pnpm --filter @ims/types build && pnpm --filter @ims/web build && pnpm --filter @ims/api build",
     "build:api": "pnpm --filter @ims/api build",
     "build:web": "pnpm --filter @ims/web build",
     "preview": "node server.js",
@@ -20,7 +20,8 @@
     "db:push": "dotenv -e .env -- pnpm --filter @ims/database push",
     "db:migrate": "dotenv -e .env -- pnpm --filter @ims/database migrate",
     "db:reset": "dotenv -e .env -- pnpm --filter @ims/database reset",
-    "clean": "rm -rf packages/*/dist apps/*/dist dist *.tsbuildinfo apps/*/tsconfig.tsbuildinfo packages/*/tsconfig.tsbuildinfo"
+    "clean": "rm -rf packages/*/dist apps/*/dist dist *.tsbuildinfo apps/*/tsconfig.tsbuildinfo packages/*/tsconfig.tsbuildinfo",
+    "postinstall": "pnpm --filter @ims/database generate"
   },
   "devDependencies": {
     "typescript": "^5.7.0"
